@@ -140,8 +140,7 @@ class TransformerPageController extends PageController {
 
   double? get realPage {
     double? page;
-    // ignore: unnecessary_null_comparison
-    if (position.maxScrollExtent == null || position.minScrollExtent == null) {
+    if (!position.hasContentDimensions) {
       page = 0.0;
     } else {
       page = super.page;
